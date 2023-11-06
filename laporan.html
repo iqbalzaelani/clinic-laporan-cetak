@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Bening'</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+</head>
+<main>
+    <body>
+        <table>
+            <tr>
+                <th><img align="top" src="assets/image/logo2.png" width="100" height="100"</th>
+            </tr>
+        </table>      
+
+            <table>
+                <tr>
+                    <th class="garis-kecil"></th>
+                    <th class="garis-menengah"></th>
+                    <th class="garis-besars"></th>
+                    <th class="style3"></th>
+                    <th class="garis-besars"></th>
+                    <th class="garis-menengah"></th>
+                    <th class="garis-kecil"></th>
+                </tr>
+            </table>
+        
+            <table>
+                <tr>
+                    <td>
+                        <p id="dataCabangKlinik">Cabang Klinik : </p>
+                        <p id="dataJenisLaporan">Jenis Laporan : </p>
+                        <p>Tanggal : 29 Oktober 2023 s/d 30 Oktober 2023</p>
+                    </td>
+                    <td colspan="2"></td>
+                    <td><p>Dicetak oleh</p></td>
+                    <td>
+                        <p id="dataCetakOleh">Aestech</p>
+                        <p id="tanggal"></p>
+                    </td>
+                </tr>
+            </table>
+
+        <table border="laporan" class="style1">
+            <tr>
+                <th class="style2">Nama Barang</th>
+                <th class="style2"></th>
+                <th class="style2" colspan="2">Qty Belum Teproses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brigthening Protective Day Cream Mother Edition.</td>
+                <td></td>
+                <td colspan="2">2.500,</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dian Puspita</td>
+                <td></td>
+                <td>500,</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Gita Rinjani</td>
+                <td></td>
+                <td>500,</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Nana Devikha</td>
+                <td></td>
+                <td>1.000,</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Yuli Sahara</td>
+                <td></td>
+                <td>500,</td>
+            </tr>
+            <tr>
+                <td>Brigthening Toner Mother Edition</td>
+                <td></td>
+                <td><strong>200,</strong></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Selly Nuraeni</td>
+                <td></td>
+                <td>150,</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Yosua</td>
+                <td></td>
+                <td>50,</td>
+            </tr>
+            <tr>
+                <td>Day Cream Acne</td>
+                <td></td>
+                <td><strong>1.750,</strong></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>XXX</td>
+                <td></td>
+                <td>250,</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>XXX</td>
+                <td></td>
+                <td>1.500,</td>
+            </tr>
+        </tbody>
+        </table>
+    </body>
+    <script>
+         window.onload = function() {
+         var urlParams = new URLSearchParams(window.location.search);
+         var cabangKlinik = urlParams.get('cabangKlinik');
+         var jenisLaporan = urlParams.get('jenisLaporan');
+         var dicetakOleh = urlParams.get('option');
+    
+         if (cabangKlinik) {
+            document.getElementById('dataCabangKlinik').innerText = "Cabang Klinik: " + cabangKlinik;
+             }
+    
+        if (jenisLaporan) {
+           document.getElementById('dataJenisLaporan').innerText = "Jenis Laporan: " + jenisLaporan;
+             }
+    
+        if (dicetakOleh) {
+            document.getElementById('dataCetakOleh').innerText = dicetakOleh;
+            }
+         }
+         //Pertanggalan
+        const paragraph = document.getElementById('tanggal');
+
+        const date = new Date();
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = date.toLocaleDateString('id-ID', options);
+
+        paragraph.textContent = ` ${formattedDate}`;
+    </script>
+</main>
+</html>
